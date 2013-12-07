@@ -6,7 +6,7 @@
 # catalog-version 0.1c
 Name:		texlive-asyfig
 Version:	0.1c
-Release:	3
+Release:	4
 Summary:	Commands for using Asymptote figures
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/asyfig
