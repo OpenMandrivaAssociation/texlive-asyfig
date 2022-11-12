@@ -1,19 +1,13 @@
-# revision 17512
-# category Package
-# catalog-ctan /macros/latex/contrib/asyfig
-# catalog-date 2010-03-20 11:11:38 +0100
-# catalog-license lppl
-# catalog-version 0.1c
 Name:		texlive-asyfig
-Version:	0.1c
-Release:	11
+Version:	17512
+Release:	1
 Summary:	Commands for using Asymptote figures
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/asyfig
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/asyfig.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/asyfig.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/asyfig.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/asyfig.r17512.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/asyfig.doc.r17512.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/asyfig.source.r17512.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -29,12 +23,12 @@ one picture at a time, in simple test documents, and then to
 migrate (with no fuss) to their use in the target document.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -51,25 +45,11 @@ migrate (with no fuss) to their use in the target document.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.1c-2
-+ Revision: 749367
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.1c-1
-+ Revision: 717865
-- texlive-asyfig
-- texlive-asyfig
-- texlive-asyfig
-- texlive-asyfig
-- texlive-asyfig
-
