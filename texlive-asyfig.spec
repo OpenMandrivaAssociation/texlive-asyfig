@@ -1,6 +1,6 @@
 Name:		texlive-asyfig
 Version:	17512
-Release:	1
+Release:	2
 Summary:	Commands for using Asymptote figures
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/asyfig
